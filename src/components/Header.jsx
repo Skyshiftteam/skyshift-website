@@ -16,6 +16,12 @@ export default function Header() {
     setMobileMenuOpen(false)
   }
 
+  const navigateToHome = () => {
+    navigate('/')
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+    setMobileMenuOpen(false)
+  }
+
   const navigateToService = (path) => {
     navigate(path)
     window.scrollTo(0, 0)
@@ -35,7 +41,7 @@ export default function Header() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <button onClick={() => navigate('/')} className="flex items-center space-x-2">
+          <button onClick={navigateToHome} className="flex items-center space-x-2">
             <div className="w-10 h-10 bg-primary rounded flex items-center justify-center">
               <span className="text-white font-bold text-xl">S</span>
             </div>
@@ -44,7 +50,7 @@ export default function Header() {
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-1">
-            <button onClick={() => navigate('/')} className="px-4 py-2 text-sm font-medium rounded hover:bg-gray-100 transition-colors">Home</button>
+            <button onClick={navigateToHome} className="px-4 py-2 text-sm font-medium rounded hover:bg-gray-100 transition-colors">Home</button>
             
             {/* Services Dropdown */}
             <div className="relative">
@@ -93,7 +99,7 @@ export default function Header() {
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
           <div className="md:hidden py-4 space-y-2 border-t border-gray-200">
-            <button onClick={() => navigate('/')} className="block w-full text-left px-4 py-2 rounded hover:bg-gray-100">Home</button>
+            <button onClick={navigateToHome} className="block w-full text-left px-4 py-2 rounded hover:bg-gray-100">Home</button>
             
             {/* Mobile Services Submenu */}
             <div>

@@ -8,6 +8,13 @@ import { useNavigate } from 'react-router-dom'
 export default function Cybersecurity() {
   const navigate = useNavigate()
 
+  const navigateToContact = () => {
+    navigate('/')
+    setTimeout(() => {
+      document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
+    }, 100)
+  }
+
   return (
     <>
       <Header />
@@ -50,7 +57,7 @@ export default function Cybersecurity() {
 
           <section className="bg-muted/50 rounded-lg p-8 text-center">
             <h2 className="text-2xl font-bold mb-4">Ready to Strengthen Your Security?</h2>
-            <Button onClick={() => navigate('/#contact')} size="lg" className="bg-primary hover:bg-primary/90">
+            <Button onClick={navigateToContact} size="lg" className="bg-primary hover:bg-primary/90">
               Request Security Assessment <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </section>

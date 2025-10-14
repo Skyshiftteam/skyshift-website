@@ -8,6 +8,13 @@ import { useNavigate } from 'react-router-dom'
 export default function CloudConsulting() {
   const navigate = useNavigate()
 
+  const navigateToContact = () => {
+    navigate('/')
+    setTimeout(() => {
+      document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
+    }, 100)
+  }
+
   const services = [
     {
       title: "Advisory & Consulting",
@@ -129,7 +136,7 @@ export default function CloudConsulting() {
           <section className="bg-muted/50 rounded-lg p-8 text-center">
             <h2 className="text-2xl font-bold mb-4">Ready to Transform Your Cloud Infrastructure?</h2>
             <p className="text-muted-foreground mb-6">Let's discuss how our cloud consulting services can help you achieve your business goals.</p>
-            <Button onClick={() => navigate('/#contact')} size="lg" className="bg-primary hover:bg-primary/90">
+            <Button onClick={navigateToContact} size="lg" className="bg-primary hover:bg-primary/90">
               Schedule Free Consultation <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </section>

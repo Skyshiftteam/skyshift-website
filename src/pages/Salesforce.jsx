@@ -8,6 +8,13 @@ import { useNavigate } from 'react-router-dom'
 export default function Salesforce() {
   const navigate = useNavigate()
 
+  const navigateToContact = () => {
+    navigate('/')
+    setTimeout(() => {
+      document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
+    }, 100)
+  }
+
   return (
     <>
       <Header />
@@ -131,7 +138,7 @@ export default function Salesforce() {
           <section className="bg-muted/50 rounded-lg p-8 text-center">
             <h2 className="text-2xl font-bold mb-4">Ready to Transform Your Business?</h2>
             <p className="text-muted-foreground mb-6">Let's discuss how SkyShift can accelerate your Salesforce® success</p>
-            <Button onClick={() => navigate('/#contact')} size="lg" className="bg-primary hover:bg-primary/90">
+            <Button onClick={navigateToContact} size="lg" className="bg-primary hover:bg-primary/90">
               Schedule Your Free Consultation <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </section>
