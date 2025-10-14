@@ -134,9 +134,6 @@ export default function Salesforce() {
             <Button onClick={() => navigate('/#contact')} size="lg" className="bg-primary hover:bg-primary/90">
               Schedule Your Free Consultation <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
-            <p className="text-xs text-muted-foreground mt-6">
-              Salesforce® is a trademark of Salesforce.com, inc. SkyShift is an independent consulting partner and is not sponsored, endorsed, or affiliated with Salesforce.com, inc.
-            </p>
           </section>
         </div>
       </div>
