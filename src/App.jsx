@@ -1,11 +1,12 @@
 import { useState } from 'react'
+import emailjs from '@emailjs/browser'
 import Header from './components/Header.jsx'
 import Footer from './components/Footer.jsx'
 import { Button } from '@/components/ui/button.jsx'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card.jsx'
 import { Input } from '@/components/ui/input.jsx'
 import { Textarea } from '@/components/ui/textarea.jsx'
-import { Cloud, Shield, Users, Database, ArrowRight, CheckCircle2, Mail } from 'lucide-react'
+import { Cloud, Shield, Users, Database, ArrowRight, CheckCircle2, Mail, AlertCircle } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
 import './App.css'
 
@@ -13,15 +14,51 @@ function App() {
   const navigate = useNavigate()
   const [formData, setFormData] = useState({ name: '', email: '', company: '', message: '' })
   const [formSubmitted, setFormSubmitted] = useState(false)
+  const [formError, setFormError] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log('Form submitted:', formData)
-    setFormSubmitted(true)
-    setTimeout(() => {
-      setFormSubmitted(false)
+    setIsSubmitting(true)
+    setFormError(false)
+
+    try {
+      // EmailJS configuration
+      const serviceId = 'service_skyshift'
+      const templateId = 'template_contact'
+      const publicKey = 'CAYkxxjyptVdNOpww'
+
+      // Prepare template parameters
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        company: formData.company || 'Not provided',
+        message: formData.message,
+        to_email: 'info@skyshift.ai'
+      }
+
+      // Send email using EmailJS
+      await emailjs.send(serviceId, templateId, templateParams, publicKey)
+      
+      // Success
+      setFormSubmitted(true)
       setFormData({ name: '', email: '', company: '', message: '' })
-    }, 5000)
+      
+      // Reset success message after 5 seconds
+      setTimeout(() => {
+        setFormSubmitted(false)
+      }, 5000)
+    } catch (error) {
+      console.error('Error sending email:', error)
+      setFormError(true)
+      
+      // Reset error message after 5 seconds
+      setTimeout(() => {
+        setFormError(false)
+      }, 5000)
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -226,6 +263,15 @@ function App() {
                   <h3 className="text-2xl font-bold mb-2">Thank You!</h3>
                   <p className="text-muted-foreground">We've received your message and will get back to you shortly.</p>
                 </Card>
+              ) : formError ? (
+                <Card className="p-8 text-center bg-white">
+                  <AlertCircle className="h-16 w-16 text-red-500 mx-auto mb-4" />
+                  <h3 className="text-2xl font-bold mb-2">Oops! Something went wrong</h3>
+                  <p className="text-muted-foreground mb-4">We couldn't send your message. Please try again or email us directly at info@skyshift.ai</p>
+                  <Button onClick={() => setFormError(false)} className="bg-primary hover:bg-primary/90">
+                    Try Again
+                  </Button>
+                </Card>
               ) : (
                 <Card className="p-8 bg-white">
                   <form onSubmit={handleSubmit} className="space-y-6">
@@ -266,9 +312,9 @@ function App() {
                         rows={5}
                       />
                     </div>
-                    <Button type="submit" size="lg" className="w-full bg-primary hover:bg-primary/90 text-lg py-6">
+                    <Button type="submit" size="lg" className="w-full bg-primary hover:bg-primary/90 text-lg py-6" disabled={isSubmitting}>
                       <Mail className="mr-2 h-5 w-5" />
-                      Send Message
+                      {isSubmitting ? 'Sending...' : 'Send Message'}
                     </Button>
                   </form>
                 </Card>
