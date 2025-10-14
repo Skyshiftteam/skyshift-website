@@ -146,7 +146,7 @@ function App() {
                   <Card 
                     key={index} 
                     className="hover:shadow-xl transition-all duration-300 cursor-pointer group"
-                    onClick={() => navigate(service.path)}
+                    onClick={() => { navigate(service.path); window.scrollTo(0, 0); }}
                   >
                     <CardHeader>
                       <div className="mb-4">
