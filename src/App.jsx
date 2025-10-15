@@ -155,7 +155,7 @@ function App() {
               {[
                 {
                   icon: Cloud,
-                  title: 'Cloud Consulting',
+                  title: 'Cloud Services',
                   description: 'Strategic cloud solutions that drive agility, scalability, and innovation',
                   path: '/cloud-consulting'
                 },
@@ -169,7 +169,7 @@ function App() {
                   icon: Database,
                   title: 'Business Applications',
                   description: 'Expert implementation and optimization of Salesforce®, ServiceNow, and Atlassian solutions',
-                  path: '/salesforce'
+                  path: '/business-applications'
                 },
                 {
                   icon: Users,

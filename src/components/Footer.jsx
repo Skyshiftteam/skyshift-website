@@ -32,9 +32,9 @@ export default function Footer() {
           <div>
             <h3 className="font-semibold text-lg mb-4">Services</h3>
             <ul className="space-y-2 text-sm text-gray-400">
-              <li><button onClick={() => { navigate('/cloud-consulting'); window.scrollTo(0, 0); }} className="hover:text-white transition-colors">Cloud Consulting</button></li>
+              <li><button onClick={() => { navigate('/cloud-consulting'); window.scrollTo(0, 0); }} className="hover:text-white transition-colors">Cloud Services</button></li>
               <li><button onClick={() => { navigate('/cybersecurity'); window.scrollTo(0, 0); }} className="hover:text-white transition-colors">Cybersecurity Services</button></li>
-              <li><button onClick={() => { navigate('/salesforce'); window.scrollTo(0, 0); }} className="hover:text-white transition-colors">Business Applications</button></li>
+              <li><button onClick={() => { navigate('/business-applications'); window.scrollTo(0, 0); }} className="hover:text-white transition-colors">Business Applications</button></li>
               <li><button onClick={() => { navigate('/human-capital'); window.scrollTo(0, 0); }} className="hover:text-white transition-colors">Human Capital as a Service</button></li>
             </ul>
           </div>

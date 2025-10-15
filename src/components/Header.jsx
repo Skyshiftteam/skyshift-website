@@ -30,9 +30,9 @@ export default function Header() {
   }
 
   const services = [
-    { name: 'Cloud Consulting', path: '/cloud-consulting' },
+    { name: 'Cloud Services', path: '/cloud-consulting' },
     { name: 'Cybersecurity Services', path: '/cybersecurity' },
-    { name: 'Business Applications', path: '/salesforce' },
+    { name: 'Business Applications', path: '/business-applications' },
     { name: 'Human Capital as a Service', path: '/human-capital' }
   ]
 
