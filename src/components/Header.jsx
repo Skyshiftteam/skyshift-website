@@ -32,7 +32,7 @@ export default function Header() {
   const services = [
     { name: 'Cloud Consulting', path: '/cloud-consulting' },
     { name: 'Cybersecurity Services', path: '/cybersecurity' },
-    { name: 'Salesforce® CRM', path: '/salesforce' },
+    { name: 'Business Applications', path: '/salesforce' },
     { name: 'Human Capital as a Service', path: '/human-capital' }
   ]
 

@@ -167,8 +167,8 @@ function App() {
                 },
                 {
                   icon: Database,
-                  title: 'Customer Relationship Management',
-                  description: 'Expert Salesforce® implementation and optimization to accelerate growth',
+                  title: 'Business Applications',
+                  description: 'Expert implementation and optimization of Salesforce®, ServiceNow, and Atlassian solutions',
                   path: '/salesforce'
                 },
                 {
