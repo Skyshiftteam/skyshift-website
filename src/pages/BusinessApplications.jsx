@@ -2,7 +2,7 @@ import Header from '../components/Header.jsx'
 import Footer from '../components/Footer.jsx'
 import { Button } from '@/components/ui/button.jsx'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card.jsx'
-import { Database, Clock, Award, Headphones, ArrowRight, CheckCircle2, Cloud, Settings, GitBranch } from 'lucide-react'
+import { Database, Clock, Award, Headphones, ArrowRight, CheckCircle2, TrendingUp, Settings, GitBranch } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
 
 export default function BusinessApplications() {
@@ -59,10 +59,10 @@ export default function BusinessApplications() {
             <div className="grid md:grid-cols-3 gap-8">
               {[
                 {
-                  icon: Cloud,
+                  icon: TrendingUp,
                   title: "Salesforce®",
-                  desc: "Expert CRM implementation and optimization to accelerate sales, enhance customer relationships, and drive revenue growth.",
-                  features: ["Sales Cloud implementation", "Service Cloud setup", "Marketing automation", "Custom integrations", "Data migration", "User training"]
+                  desc: "Expert Agentforce 360 implementation and optimization to accelerate sales, enhance customer relationships, and drive revenue growth with AI-powered automation.",
+                  features: ["Agentforce Sales implementation", "Agentforce Service setup", "Agentforce Marketing automation", "Data 360 integration", "Custom integrations & AI agents", "User training & adoption"]
                 },
                 {
                   icon: Settings,
