@@ -2,7 +2,7 @@ import Header from '../components/Header.jsx'
 import Footer from '../components/Footer.jsx'
 import { Button } from '@/components/ui/button.jsx'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card.jsx'
-import { Database, Clock, Award, Headphones, ArrowRight, CheckCircle2, TrendingUp, Settings, GitBranch } from 'lucide-react'
+import { Database, ArrowRight, CheckCircle2, TrendingUp, Settings, GitBranch } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
 
 export default function BusinessApplications() {
@@ -26,26 +26,9 @@ export default function BusinessApplications() {
                 <Database className="h-16 w-16 mr-4" />
                 <h1 className="text-4xl sm:text-5xl font-bold">Business Applications</h1>
               </div>
-              <p className="text-xl text-white/90 mb-8">
+              <p className="text-xl text-white/90">
                 Transform your business operations with expert implementation and optimization of Salesforce®, ServiceNow, and Atlassian solutions. We help companies streamline processes, enhance collaboration, and accelerate growth through intelligent cloud applications.
               </p>
-              <div className="grid grid-cols-3 gap-6 mt-8">
-                <div className="text-center">
-                  <Clock className="h-12 w-12 mx-auto mb-2" />
-                  <div className="text-2xl font-bold">3-8 Weeks</div>
-                  <div className="text-sm text-white/80">Fast Delivery Promise</div>
-                </div>
-                <div className="text-center">
-                  <Award className="h-12 w-12 mx-auto mb-2" />
-                  <div className="text-2xl font-bold">Expert</div>
-                  <div className="text-sm text-white/80">Certified Implementation</div>
-                </div>
-                <div className="text-center">
-                  <Headphones className="h-12 w-12 mx-auto mb-2" />
-                  <div className="text-2xl font-bold">24/7</div>
-                  <div className="text-sm text-white/80">Ongoing Support</div>
-                </div>
-              </div>
             </div>
           </div>
         </section>
