@@ -2,7 +2,7 @@ import Header from '../components/Header.jsx'
 import Footer from '../components/Footer.jsx'
 import { Button } from '@/components/ui/button.jsx'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card.jsx'
-import { Database, Clock, Award, Headphones, ArrowRight, CheckCircle2 } from 'lucide-react'
+import { Database, Clock, Award, Headphones, ArrowRight, CheckCircle2, Cloud, Settings, GitBranch } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
 
 export default function BusinessApplications() {
@@ -59,79 +59,47 @@ export default function BusinessApplications() {
             <div className="grid md:grid-cols-3 gap-8">
               {[
                 {
+                  icon: Cloud,
                   title: "Salesforce®",
                   desc: "Expert CRM implementation and optimization to accelerate sales, enhance customer relationships, and drive revenue growth.",
-                  features: ["Sales Cloud implementation", "Service Cloud setup", "Marketing automation", "Custom integrations", "Data migration", "User training"],
-                  timeline: "3-6 weeks delivery"
+                  features: ["Sales Cloud implementation", "Service Cloud setup", "Marketing automation", "Custom integrations", "Data migration", "User training"]
                 },
                 {
+                  icon: Settings,
                   title: "ServiceNow",
                   desc: "IT service management and workflow automation to streamline operations, improve efficiency, and enhance service delivery.",
-                  features: ["ITSM implementation", "Workflow automation", "Service portal configuration", "Integration services", "Process optimization", "Change management"],
-                  timeline: "4-8 weeks delivery"
+                  features: ["ITSM implementation", "Workflow automation", "Service portal configuration", "Integration services", "Process optimization", "Change management"]
                 },
                 {
+                  icon: GitBranch,
                   title: "Atlassian",
                   desc: "Project management and collaboration tools to enhance team productivity, streamline workflows, and improve project delivery.",
-                  features: ["Jira implementation", "Confluence setup", "Workflow customization", "Agile board configuration", "Integration with dev tools", "Team training"],
-                  timeline: "3-6 weeks delivery"
+                  features: ["Jira implementation", "Confluence setup", "Workflow customization", "Agile board configuration", "Integration with dev tools", "Team training"]
                 }
-              ].map((service, index) => (
-                <Card key={index} className="hover:shadow-xl transition-shadow">
-                  <CardHeader>
-                    <CardTitle className="text-xl">{service.title}</CardTitle>
-                    <p className="text-sm text-muted-foreground mt-2">{service.desc}</p>
-                  </CardHeader>
-                  <CardContent>
-                    <ul className="space-y-2 mb-4">
-                      {service.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-start text-sm">
-                          <CheckCircle2 className="h-4 w-4 text-primary mr-2 flex-shrink-0 mt-0.5" />
-                          <span>{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <div className="text-sm font-semibold text-primary">{service.timeline}</div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </section>
-
-          <section className="mb-16">
-            <h2 className="text-3xl font-bold mb-8 text-center">The SkyShift Methodology</h2>
-            <p className="text-center text-muted-foreground mb-12">Our proven 4-step process ensures successful implementation every time</p>
-            <div className="grid md:grid-cols-4 gap-6">
-              {[
-                { step: "STEP 01", title: "Discovery & Analysis", desc: "Deep dive into your business processes, requirements, and goals to create a tailored implementation strategy." },
-                { step: "STEP 02", title: "Design & Configure", desc: "Custom configuration aligned with your workflows, including automation and integrations." },
-                { step: "STEP 03", title: "Deploy & Test", desc: "Careful deployment with comprehensive testing to ensure everything works perfectly before go-live." },
-                { step: "STEP 04", title: "Train & Support", desc: "User training and ongoing support to maximize adoption and ensure long-term success." }
-              ].map((phase, index) => (
-                <div key={index}>
-                  <div className="text-sm font-bold text-primary mb-2">{phase.step}</div>
-                  <h3 className="text-lg font-semibold mb-2">{phase.title}</h3>
-                  <p className="text-sm text-muted-foreground">{phase.desc}</p>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          <section className="mb-16">
-            <h2 className="text-3xl font-bold mb-4 text-center">Expected Results</h2>
-            <p className="text-center text-muted-foreground mb-12">Based on industry standards and best practices, our customers typically achieve measurable business impact</p>
-            <div className="grid md:grid-cols-4 gap-6">
-              {[
-                { metric: "Up to 35%", label: "Productivity Increase" },
-                { metric: "Up to 40%", label: "Process Efficiency Gain" },
-                { metric: "Up to 50%", label: "Faster Project Delivery" },
-                { metric: "Up to 60%", label: "Reduced Manual Work" }
-              ].map((result, index) => (
-                <div key={index} className="text-center p-6 bg-muted/50 rounded-lg">
-                  <div className="text-4xl font-bold text-primary mb-2">{result.metric}</div>
-                  <div className="text-sm font-medium">{result.label}</div>
-                </div>
-              ))}
+              ].map((service, index) => {
+                const Icon = service.icon
+                return (
+                  <Card key={index} className="hover:shadow-xl transition-shadow">
+                    <CardHeader>
+                      <div className="mb-4">
+                        <Icon className="h-12 w-12 text-primary" />
+                      </div>
+                      <CardTitle className="text-xl">{service.title}</CardTitle>
+                      <p className="text-sm text-muted-foreground mt-2">{service.desc}</p>
+                    </CardHeader>
+                    <CardContent>
+                      <ul className="space-y-2">
+                        {service.features.map((feature, idx) => (
+                          <li key={idx} className="flex items-start text-sm">
+                            <CheckCircle2 className="h-4 w-4 text-primary mr-2 flex-shrink-0 mt-0.5" />
+                            <span>{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </CardContent>
+                  </Card>
+                )
+              })}
             </div>
           </section>
 
