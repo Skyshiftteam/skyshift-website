@@ -18,7 +18,7 @@ export default function Footer() {
           {/* Column 1: Logo and Description */}
           <div>
             <div className="flex items-center space-x-2 mb-4">
-              <img src="/skyshift-logo.png" alt="SkyShift Logo" className="w-10 h-10" />
+              <img src="/skyshift-logo-footer.png" alt="SkyShift Logo" className="w-10 h-10" />
               <span className="font-semibold text-lg">SkyShift.ai</span>
             </div>
             <p className="text-gray-400 text-sm">
