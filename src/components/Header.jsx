@@ -42,9 +42,7 @@ export default function Header() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <button onClick={navigateToHome} className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-primary rounded flex items-center justify-center">
-              <span className="text-white font-bold text-xl">S</span>
-            </div>
+            <img src="/skyshift-logo.png" alt="SkyShift Logo" className="w-10 h-10" />
             <span className="font-semibold text-lg">SkyShift.ai</span>
           </button>
           
