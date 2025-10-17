@@ -22,7 +22,7 @@ export default function Footer() {
               <span className="font-semibold text-lg">SkyShift.ai</span>
             </div>
             <p className="text-gray-400 text-sm">
-              Transforming businesses with expert consulting services across Cloud, Cybersecurity, CRM, and Human Capital.
+              Transforming businesses with expert consulting services across Cloud, Cybersecurity, Business Applications, and Human Capital.
             </p>
           </div>
 

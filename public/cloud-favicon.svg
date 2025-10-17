@@ -1,12 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
   <defs>
     <linearGradient id="cloudGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#4F7CFF;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#3B82F6;stop-opacity:1" />
+      <stop offset="0%" style="stop-color:#60A5FA;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#93C5FD;stop-opacity:1" />
     </linearGradient>
   </defs>
+  <!-- Cloud outline -->
   <path d="M 75 45 C 75 35 67 27 57 27 C 55 27 53 27.5 51 28 C 48 20 40 15 31 15 C 19 15 10 24 10 36 C 10 37 10 38 10.2 39 C 5 41 2 46 2 52 C 2 60 8 67 16 67 L 75 67 C 85 67 93 59 93 49 C 93 39 85 31 75 31 C 75 31 75 38 75 45 Z" 
         fill="url(#cloudGradient)" 
-        stroke="#1E3A8A" 
-        stroke-width="2"/>
+        stroke="none"/>
+  <!-- Ascending arrows -->
+  <path d="M 35 55 L 40 50 L 40 60 Z M 45 45 L 50 40 L 50 55 Z M 55 35 L 60 30 L 60 50 Z" 
+        fill="#60A5FA"/>
 </svg>
